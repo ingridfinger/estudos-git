@@ -4,3 +4,5 @@ Testando
 
 ## Nova funcionalidade
 Desenvolvendo uma funcionalidade de teste.
+
+Status do projeto: Em desenvolvimento pela teste.

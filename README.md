@@ -8,3 +8,5 @@ Desenvolvendo uma funcionalidade de teste.
 Status do projeto: Em desenvolvimento.
 
 Alteração realizada diretamente pelo GitHub.
+
+Estudando Git e GitHub na prática!

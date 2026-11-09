@@ -6,3 +6,5 @@ Testando
 Desenvolvendo uma funcionalidade de teste.
 
 Status do projeto: Em desenvolvimento.
+
+Alteração realizada diretamente pelo GitHub.

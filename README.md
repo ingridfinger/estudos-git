@@ -60,3 +60,5 @@ Consolidar os conhecimentos de Git e GitHub por meio de exercícios práticos, d
 
 
 ## Atualização realizada na main
+
+## Aprendendo Git Cherry-pick

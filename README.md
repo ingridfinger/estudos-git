@@ -57,8 +57,3 @@ Consolidar os conhecimentos de Git e GitHub por meio de exercícios práticos, d
 ୨୧ ─────────────── ୨୧
 
 *Um commit de cada vez, evoluindo sempre.* ♡
-
-
-## Atualização realizada na main
-
-## Aprendendo Git Cherry-pick

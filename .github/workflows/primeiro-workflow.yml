@@ -3,6 +3,9 @@ name: Meu primeiro workflow
 
 on:
   push:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   primeiro-job:

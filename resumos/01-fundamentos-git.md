@@ -1,8 +1,10 @@
 
 
-# 🎀 Fundamentos do Git
+# Aula 01 — Fundamentos do Git 🎀
 
-୨୧ Meu caderno de estudos — Git & GitHub
+> 🌷 Primeiros conceitos e comandos para começar a trabalhar com controle de versão.
+
+---
 
 ## 🌷 1. O que é Git?
 
@@ -118,6 +120,8 @@ Esse é um fluxo básico de trabalho: verificar, adicionar, registrar e conferir
 - Evitar registrar arquivos desnecessários.
 - Manter o histórico organizado para facilitar a identificação de alterações.
 
+---
+
 ## 📝 6. Resumo da aula
 
 O Git permite controlar as versões de um projeto e acompanhar seu histórico de alterações.
@@ -139,3 +143,4 @@ git commit -m "Descrição das alterações"
 git log
 ```
 
+---

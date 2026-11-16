@@ -1,7 +1,6 @@
-# 🎀 Tags e Versionamento no Git
+# Aula 07 — Tags e Versionamento no Git 🎀
 
-> ୨୧ Meu caderno de estudos — Git & GitHub  
-> Aprendendo a identificar versões importantes de um projeto e organizar seu histórico!
+> 🌷 Aprendendo a identificar versões importantes de um projeto e organizar lançamentos utilizando Tags, Semantic Versioning e Releases no GitHub.
 
 ---
 
@@ -18,7 +17,7 @@ Por exemplo:
 - `v1.1.1`: versão com correções.
 - `v2.0.0`: nova versão principal, com mudanças significativas.
 
-### Para que servem?
+### 🩷 Para que servem?
 
 - Identificar versões importantes.
 - Facilitar a consulta de versões anteriores.
@@ -30,11 +29,11 @@ Por exemplo:
 
 ---
 
-## 🩷 2. Tipos de Tags
+## 🌸 2. Tipos de Tags
 
 O Git possui dois tipos principais de tags: *Lightweight* e *Annotated*.
 
-### Lightweight Tag
+### 🎯 Lightweight Tag
 
 É uma tag simples que funciona como uma referência direta para um commit.
 
@@ -48,7 +47,7 @@ git tag v1.0.0
 
 É útil para marcações simples e temporárias.
 
-### Annotated Tag
+### ✨ Annotated Tag
 
 É uma tag anotada que possui um objeto próprio no Git, armazenando informações adicionais, como:
 
@@ -65,7 +64,7 @@ git tag -a v1.0.0 -m "Primeira versão do projeto"
 
 É recomendada para identificar versões oficiais e lançamentos de projetos.
 
-### Comparação
+### 📊 Comparação
 
 | Característica | Lightweight | Annotated |
 |---|---|---|
@@ -82,7 +81,7 @@ git tag -a v1.0.0 -m "Primeira versão do projeto"
 
 ## 💻 3. Principais comandos
 
-### Listar Tags
+### 🔎 Listar Tags
 
 ```bash
 git tag
@@ -96,19 +95,19 @@ Para pesquisar tags por padrão:
 git tag -l "v1.*"
 ```
 
-### Criar uma Tag Lightweight
+### 🌱 Criar uma Tag Lightweight
 
 ```bash
 git tag v1.0.0
 ```
 
-### Criar uma Tag Annotated
+### ✨ Criar uma Tag Annotated
 
 ```bash
 git tag -a v1.0.0 -m "Primeira versão"
 ```
 
-### Consultar os detalhes de uma Tag
+### 📌 Consultar os detalhes de uma Tag
 
 ```bash
 git show v1.0.0
@@ -116,7 +115,7 @@ git show v1.0.0
 
 Exibe informações da tag, do commit associado e das alterações registradas.
 
-### Marcar um commit específico
+### 🎯 Marcar um commit específico
 
 Por padrão, a tag é criada no commit atual (`HEAD`).
 
@@ -126,7 +125,7 @@ Para marcar outro commit, podemos informar seu identificador:
 git tag -a v1.0.0 ID_DO_COMMIT -m "Primeira versão"
 ```
 
-### Excluir uma Tag local
+### 🗑️ Excluir uma Tag local
 
 ```bash
 git tag -d v1.0.0
@@ -134,7 +133,7 @@ git tag -d v1.0.0
 
 Remove a tag do repositório local, mas não exclui o commit.
 
-### Enviar uma Tag para o GitHub
+### ☁️ Enviar uma Tag para o GitHub
 
 ```bash
 git push origin v1.0.0
@@ -142,7 +141,7 @@ git push origin v1.0.0
 
 Envia uma tag específica para o repositório remoto.
 
-### Enviar todas as Tags
+### 📤 Enviar todas as Tags
 
 ```bash
 git push origin --tags
@@ -150,7 +149,7 @@ git push origin --tags
 
 Envia todas as tags locais que ainda não estão no repositório remoto.
 
-### Baixar Tags do Repositório Remoto
+### 📥 Baixar Tags do Repositório Remoto
 
 ```bash
 git fetch --tags
@@ -158,7 +157,7 @@ git fetch --tags
 
 Busca as tags disponíveis no repositório remoto.
 
-### Excluir uma Tag Remota
+### 🗑️ Excluir uma Tag Remota
 
 ```bash
 git push origin --delete v1.0.0
@@ -170,7 +169,7 @@ Remove a referência da tag no repositório remoto.
 
 ---
 
-## 🌸 4. O que é Versionamento Semântico?
+## 🌷 4. O que é Versionamento Semântico?
 
 O **Semantic Versioning**, também conhecido como SemVer, é um padrão utilizado para organizar os números das versões de um software.
 
@@ -188,7 +187,7 @@ Exemplo:
 
 Cada número possui um significado.
 
-### MAJOR
+### 🔴 MAJOR
 
 Representa mudanças incompatíveis com versões anteriores.
 
@@ -200,7 +199,7 @@ Exemplo:
 
 Pode indicar mudanças importantes na estrutura ou no funcionamento do sistema que exigem adaptações.
 
-### MINOR
+### 🟣 MINOR
 
 Representa a adição de funcionalidades compatíveis com versões anteriores.
 
@@ -212,7 +211,7 @@ Exemplo:
 
 Indica que novas funcionalidades foram adicionadas sem quebrar a compatibilidade.
 
-### PATCH
+### 🟢 PATCH
 
 Representa correções de erros e melhorias compatíveis com a versão anterior.
 
@@ -224,7 +223,7 @@ Exemplo:
 
 Indica uma atualização com correções, sem adicionar uma nova funcionalidade principal.
 
-### Resumo
+### 📊 Resumo
 
 | Tipo | Quando incrementar? | Exemplo |
 |---|---|---|
@@ -238,7 +237,7 @@ Indica uma atualização com correções, sem adicionar uma nova funcionalidade 
 
 Apesar de estarem relacionadas, Tag e Release não são a mesma coisa.
 
-### Tag
+### 🏷️ Tag
 
 É uma referência criada no Git para identificar um commit específico.
 
@@ -248,7 +247,7 @@ Exemplo:
 v1.0.0
 ```
 
-### Release
+### 🚀 Release
 
 É um recurso do GitHub utilizado para apresentar e distribuir uma versão do projeto.
 
@@ -260,7 +259,7 @@ Uma Release pode conter:
 - Arquivos para download.
 - Informações sobre o lançamento.
 
-### Exemplo prático
+### 🩷 Exemplo prático
 
 Podemos criar uma tag chamada `v1.0.0` no Git e depois utilizar essa tag para criar uma Release no GitHub.
 
@@ -272,15 +271,15 @@ Assim, a versão fica identificada no histórico do repositório e apresentada d
 
 Depois de criar e publicar uma tag, podemos criar uma Release.
 
-### Etapa 1 — Acessar o repositório
+### 1. 🌐 Acessar o repositório
 
 Entrar no repositório no GitHub.
 
-### Etapa 2 — Abrir a área de Releases
+### 2. 📦 Abrir a área de Releases
 
 Acessar a seção **Releases** e selecionar a opção para criar uma nova Release.
 
-### Etapa 3 — Selecionar a Tag
+### 3. 🏷️ Selecionar a Tag
 
 Escolher a tag que identifica a versão, por exemplo:
 
@@ -288,7 +287,7 @@ Escolher a tag que identifica a versão, por exemplo:
 v1.0.0
 ```
 
-### Etapa 4 — Adicionar o título
+### 4. ✏️ Adicionar o título
 
 Exemplo:
 
@@ -296,7 +295,7 @@ Exemplo:
 v1.0.0 — Primeira versão
 ```
 
-### Etapa 5 — Escrever a descrição
+### 5. 📝 Escrever a descrição
 
 A descrição deve apresentar o que foi desenvolvido ou atualizado naquela versão.
 
@@ -315,7 +314,7 @@ Primeira versão organizada do repositório.
 - Tags e versionamento.
 ```
 
-### Etapa 6 — Publicar
+### 6. 🚀 Publicar
 
 Depois de conferir as informações, podemos clicar em **Publish release**.
 
@@ -327,7 +326,7 @@ Pronto! A versão estará disponível na área de Releases do GitHub.
 
 Imagine que finalizamos uma etapa importante do nosso projeto e queremos identificá-la como versão `v1.0.0`.
 
-### Etapa 1 — Conferir o histórico
+### 1. 🔎 Conferir o histórico
 
 ```bash
 git log --oneline
@@ -335,31 +334,31 @@ git log --oneline
 
 Identificamos o commit que representa a versão desejada.
 
-### Etapa 2 — Criar uma Tag Annotated
+### 2. ✨ Criar uma Tag Annotated
 
 ```bash
 git tag -a v1.0.0 -m "Primeira versão do projeto"
 ```
 
-### Etapa 3 — Conferir as Tags
+### 3. 🏷️ Conferir as Tags
 
 ```bash
 git tag
 ```
 
-### Etapa 4 — Consultar os detalhes
+### 4. 📋 Consultar os detalhes
 
 ```bash
 git show v1.0.0
 ```
 
-### Etapa 5 — Publicar a Tag
+### 5. ☁️ Publicar a Tag
 
 ```bash
 git push origin v1.0.0
 ```
 
-### Etapa 6 — Criar uma Release
+### 6. 🚀 Criar uma Release
 
 No GitHub, selecionamos a tag `v1.0.0`, adicionamos um título e uma descrição e publicamos a Release.
 
@@ -378,11 +377,15 @@ Assim, temos uma versão identificada no Git e apresentada oficialmente no GitHu
 - Mantenha um histórico organizado das versões.
 - Não confunda publicar uma tag com atualizar a branch principal.
 
-**Importante:** ao executar `git push origin v1.0.0`, o Git envia a referência da tag e os objetos necessários para que o commit marcado esteja disponível no remoto. Isso não atualiza a referência da branch `main`, mas os commits alcançados pela tag podem ficar acessíveis por meio dela.
+### ⚠️ Uma observação importante
+
+Ao executar `git push origin v1.0.0`, o Git envia a referência da tag e os objetos necessários para que o commit marcado esteja disponível no remoto.
+
+Isso não atualiza a referência da branch `main`, mas os commits alcançados pela tag podem ficar acessíveis por meio dela.
 
 ---
 
-## 🌷 9. O que preciso lembrar?
+## 📝 9. Resumo da aula
 
 | Comando | Função |
 |---|---|
@@ -397,13 +400,3 @@ Assim, temos uma versão identificada no Git e apresentada oficialmente no GitHu
 | `git push origin --delete v1.0.0` | Exclui uma tag remota. |
 
 ---
-
-## 🎀 10. Minhas anotações
-
-- 
-- 
-- 
-
----
-
-<sub>♡ Cada versão representa uma etapa da evolução de um projeto. Registrar essa evolução também faz parte de desenvolver com qualidade! ♡</sub>

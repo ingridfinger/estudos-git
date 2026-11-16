@@ -1,6 +1,6 @@
-# 🎀 09 — Git Revert
+# Aula 09 — Git Revert 🎀
 
-> 🌷 **Desfazendo alterações sem apagar o histórico do projeto!**
+> 🌷 Desfazendo alterações sem apagar o histórico do projeto!
 
 O `git revert` é um comando muito útil quando cometemos algum erro em um commit e queremos desfazer suas alterações sem comprometer o histórico do repositório.
 
@@ -13,6 +13,8 @@ O `git revert` permite desfazer as alterações introduzidas por um commit espec
 A diferença é que ele **não apaga o commit original**. Em vez disso, cria um novo commit que aplica as alterações inversas.
 
 Assim, o histórico continua preservado e conseguimos visualizar tanto a alteração original quanto sua reversão.
+
+---
 
 ## 🌸 2. Sintaxe básica
 
@@ -27,6 +29,8 @@ git revert HEAD
 ```
 
 **Lembrete:** `HEAD` representa o commit em que estamos atualmente.
+
+---
 
 ## 🧁 3. Entendendo na prática
 
@@ -52,35 +56,37 @@ A → B → C → D → E
 
 Perceba que o commit `C` continua existindo! O novo commit `E` é responsável por desfazer suas alterações.
 
+---
+
 ## 🎀 4. Nosso exercício prático
 
-Durante os estudos, criamos um arquivo chamado `teste-revert.txt`:
+Durante os estudos, criamos um arquivo chamado `teste-revert.txt`.
 
-**1. Criamos o arquivo:**
+### 1. ✏️ Criamos o arquivo
 
 ```powershell
 echo "Arquivo para praticar revert" > teste-revert.txt
 ```
 
-**2. Adicionamos à área de preparação:**
+### 2. 📥 Adicionamos à área de preparação
 
 ```bash
 git add teste-revert.txt
 ```
 
-**3. Criamos o commit:**
+### 3. 💾 Criamos o commit
 
 ```bash
 git commit -m "Adiciona arquivo para praticar revert"
 ```
 
-**4. Conferimos o histórico:**
+### 4. 🔎 Conferimos o histórico
 
 ```bash
 git log --oneline
 ```
 
-**5. Revertimos o último commit:**
+### 5. ↩️ Revertimos o último commit
 
 ```bash
 git revert HEAD
@@ -89,6 +95,8 @@ git revert HEAD
 O Git criou um novo commit que desfez a criação do arquivo.
 
 ✨ O resultado foi que o arquivo deixou de existir no estado atual do projeto, mas o commit original continuou registrado no histórico.
+
+---
 
 ## 🌷 5. Git Revert x Git Reset
 
@@ -101,10 +109,12 @@ Os dois comandos podem ser usados para desfazer alterações, mas funcionam de m
 | Desfaz as alterações de um commit. | Pode alterar o histórico e o estado dos arquivos. |
 | Indicado para commits compartilhados. | Muito utilizado para reorganizar o histórico local. |
 
-**Quando usar?**
+### 💡 Quando usar?
 
 - 💗 `git revert`: quando queremos desfazer um commit sem reescrever o histórico, especialmente se ele já foi compartilhado.
 - 💗 `git reset`: quando queremos voltar a um commit anterior e reorganizar o histórico local.
+
+---
 
 ## 🪄 6. Revertendo um commit específico
 
@@ -139,13 +149,15 @@ git revert HEAD~1
 
 Isso funciona porque `HEAD~1` representa o primeiro commit anterior ao atual nesse histórico linear.
 
+---
+
 ## ⚠️ 7. Resolvendo conflitos durante o Revert
 
 Assim como em outras operações do Git, um `revert` pode apresentar conflitos.
 
 Isso acontece quando o Git não consegue aplicar automaticamente as alterações inversas.
 
-Para resolver:
+### 🛠️ Como resolver?
 
 **1.** Verifique quais arquivos apresentam conflitos.
 
@@ -169,6 +181,8 @@ Se quiser cancelar a operação em andamento:
 git revert --abort
 ```
 
+---
+
 ## 🌼 8. Revert de um Merge Commit
 
 Também é possível reverter um merge commit, mas precisamos informar qual dos pais será considerado a linha principal.
@@ -181,6 +195,8 @@ O parâmetro `-m 1` indica que o primeiro pai será tratado como a linha princip
 
 ⚠️ Essa operação exige atenção, pois pode influenciar a forma como merges futuros serão realizados.
 
+---
+
 ## 💻 9. Comandos importantes
 
 | Comando | Para que serve |
@@ -192,6 +208,8 @@ O parâmetro `-m 1` indica que o primeiro pai será tratado como a linha princip
 | `git revert --abort` | Cancela o revert em andamento. |
 | `git revert -m 1 ID` | Reverte um merge commit usando o primeiro pai como referência principal. |
 
+---
+
 ## ✨ 10. Boas práticas
 
 - 🌷 Confira o histórico antes de executar o comando.
@@ -200,20 +218,16 @@ O parâmetro `-m 1` indica que o primeiro pai será tratado como a linha princip
 - 🌷 Verifique os arquivos depois da reversão.
 - 🌷 Execute testes para garantir que tudo continua funcionando.
 
-## 💗 11. O que aprendi?
+---
+
+## 💗 11. Resumo da aula
 
 O `git revert` permite desfazer as alterações de um commit criando um novo commit que registra essa reversão.
 
 Sua principal diferença em relação ao `git reset` é que ele preserva o histórico original, sendo uma alternativa mais segura para desfazer commits que já foram compartilhados com outras pessoas.
 
----
-
-<blockquote>
-
-🎀 **Para guardar:**
+**Para guardar:**
 
 `git revert` = desfaz as alterações, mas mantém o commit original no histórico.
 
-</blockquote>
-
-*Mais um conceito aprendido e documentado! 🌷*
+---

@@ -1,6 +1,6 @@
-# 🎀 10 — Git Reflog
+# Aula 10 — Git Reflog 🎀
 
-> 🌷 **Encontrando o caminho de volta para commits aparentemente perdidos!**
+> 🌷 Encontrando o caminho de volta para commits aparentemente perdidos!
 
 O `git reflog` é um recurso muito importante para recuperação no Git. Ele registra movimentações de referências, permitindo localizar commits que não aparecem mais no histórico normal da branch.
 
@@ -8,7 +8,7 @@ O `git reflog` é um recurso muito importante para recuperação no Git. Ele reg
 
 ## 💗 1. O que é Git Reflog?
 
-O `git reflog` (Reference Logs) registra as movimentações de referências do repositório local, principalmente do `HEAD`.
+O `git reflog` (*Reference Logs*) registra as movimentações de referências do repositório local, principalmente do `HEAD`.
 
 Ele mantém um histórico de operações como:
 
@@ -20,6 +20,8 @@ Ele mantém um histórico de operações como:
 - Outras movimentações de referências.
 
 ✨ Sua principal utilidade é ajudar a encontrar commits que deixaram de aparecer no histórico atual depois de alguma operação.
+
+---
 
 ## 🌸 2. Sintaxe básica
 
@@ -43,6 +45,8 @@ git reflog show main
 
 **Lembrete:** o reflog é local. Ele não funciona como um histórico compartilhado no GitHub.
 
+---
+
 ## 🧁 3. Entendendo a diferença entre Git Log e Git Reflog
 
 Embora os dois comandos mostrem informações sobre o histórico, eles têm finalidades diferentes.
@@ -57,6 +61,8 @@ Embora os dois comandos mostrem informações sobre o histórico, eles têm fina
 
 - `git log`: consulta o histórico de commits.
 - `git reflog`: consulta o histórico de movimentações do Git.
+
+---
 
 ## 🎀 4. Entendendo as referências do Reflog
 
@@ -77,6 +83,8 @@ Vamos entender cada parte:
 - **Descrição:** informa qual operação foi realizada.
 
 ⚠️ Os números de `HEAD@{n}` representam posições no reflog, não a quantidade de commits anteriores. Eles também mudam conforme novas operações são realizadas.
+
+---
 
 ## 🪄 5. Recuperando commits com Git Reflog
 
@@ -123,6 +131,8 @@ git log recuperacao --oneline -1
 ```
 
 💗 **Importante:** criar uma branch de recuperação não move a branch atual. Apenas cria uma referência para o commit desejado.
+
+---
 
 ## 🌷 6. Nosso exercício prático
 
@@ -176,6 +186,8 @@ E encontramos:
 
 ✨ Assim, conseguimos preservar o commit mesmo depois de termos realizado um `reset --hard`.
 
+---
+
 ## ⚠️ 7. Cuidados importantes
 
 - 🌸 O reflog é armazenado localmente e não é enviado automaticamente ao GitHub.
@@ -185,6 +197,8 @@ E encontramos:
 - 🌸 Criar uma branch de recuperação é uma alternativa segura para guardar um commit localizado.
 
 **Atenção:** o `git reflog` ajuda a localizar commits, mas não é um substituto para backups.
+
+---
 
 ## 💻 8. Comandos importantes
 
@@ -198,20 +212,16 @@ E encontramos:
 | `git log nome --oneline -1` | Confere o último commit de uma branch. |
 | `git --no-pager reflog` | Exibe o reflog sem abrir o paginador do terminal. |
 
-## ✨ 9. O que aprendi?
+---
+
+## ✨ 9. Resumo da aula
 
 O `git reflog` permite consultar o histórico de movimentações das referências locais e localizar commits que deixaram de aparecer no histórico atual de uma branch.
 
 Com ele, podemos encontrar commits após operações como `git reset --hard` e preservá-los criando uma nova branch com `git branch`.
 
----
-
-<blockquote>
-
-🎀 **Para guardar:**
+**Para guardar:**
 
 `git reflog` = histórico de movimentações e uma grande ajuda para recuperar commits aparentemente perdidos!
 
-</blockquote>
-
-*Mais um conhecimento documentado na nossa jornada com Git! 🌷*
+---

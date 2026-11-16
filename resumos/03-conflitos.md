@@ -1,7 +1,8 @@
-# 🎀 Conflitos e Resolução no Git
 
-> ୨୧ Meu caderno de estudos — Git & GitHub  
-> Aprendendo a identificar, entender e resolver conflitos durante o desenvolvimento!
+
+# Aula 03 — Conflitos e Resolução no Git 🎀
+
+> 🌷 Entendendo por que os conflitos acontecem e como resolver alterações durante operações do Git.
 
 ---
 
@@ -20,7 +21,7 @@ Quando tentamos unir essas alterações, o Git não sabe qual versão deve perma
 
 Por isso, ele solicita que o desenvolvedor resolva o conflito manualmente.
 
-### Por que os conflitos acontecem?
+### 🩷 Por que os conflitos acontecem?
 
 - Duas branches modificam a mesma linha de um arquivo.
 - Uma pessoa altera um arquivo enquanto outra também está trabalhando nele.
@@ -29,9 +30,7 @@ Por isso, ele solicita que o desenvolvedor resolva o conflito manualmente.
 
 **Importante:** conflitos são situações normais no desenvolvimento colaborativo. Eles não significam que o repositório está corrompido.
 
----
-
-## 🩷 2. Como identificar um conflito?
+## 🔎 2. Como identificar um conflito?
 
 Quando o Git encontra um conflito, ele interrompe a operação e informa quais arquivos precisam de atenção.
 
@@ -53,8 +52,6 @@ Unmerged paths:
 
 Isso indica que o arquivo `README.md` foi modificado nas duas versões e precisa ser resolvido.
 
----
-
 ## 💻 3. Entendendo os marcadores de conflito
 
 Ao abrir um arquivo com conflito, podemos encontrar uma estrutura parecida com esta:
@@ -69,7 +66,7 @@ Estou estudando Git e GitHub.
 
 Esses símbolos são marcadores adicionados pelo Git para mostrar as partes conflitantes.
 
-### O que cada marcador significa?
+### 📌 O que cada marcador significa?
 
 | Marcador | Significado |
 |---|---|
@@ -83,8 +80,6 @@ No exemplo:
 - O conteúdo abaixo de `=======` representa a outra versão.
 
 **Atenção:** durante um rebase, a interpretação de `HEAD` e da outra versão pode ser diferente da que encontramos em um merge. Por isso, sempre analise o conteúdo e o contexto antes de escolher o que manter.
-
----
 
 ## 🌸 4. Como resolver um conflito?
 
@@ -100,7 +95,7 @@ Podemos seguir estes passos:
 6. Salvar o arquivo.
 7. Continuar ou finalizar a operação que gerou o conflito.
 
-### Exemplo de resolução
+### ✨ Exemplo de resolução
 
 Antes:
 
@@ -120,7 +115,7 @@ Estou aprendendo Git e GitHub.
 
 O conteúdo final deve conter apenas o texto desejado, sem os marcadores de conflito.
 
-### Resolvendo pelo VS Code
+### 💗 Resolvendo pelo VS Code
 
 O VS Code possui ferramentas visuais para facilitar esse processo.
 
@@ -135,9 +130,7 @@ Também é possível editar o arquivo manualmente.
 
 **Importante:** aceitar as duas alterações não significa necessariamente que o resultado ficará correto. Sempre revise o conteúdo final.
 
----
-
-## ✨ 5. Finalizando um conflito de Merge
+## 💾 5. Finalizando um conflito de Merge
 
 Quando o conflito acontece durante um `merge`, precisamos adicionar os arquivos resolvidos à Staging Area.
 
@@ -163,7 +156,7 @@ git merge --continue
 
 Esse comando continua o merge depois que os conflitos foram resolvidos e adicionados.
 
-### Cancelando um Merge
+### ↩️ Cancelando um Merge
 
 Se decidirmos desistir da operação:
 
@@ -172,8 +165,6 @@ git merge --abort
 ```
 
 Esse comando tenta retornar o repositório ao estado anterior ao início do merge.
-
----
 
 ## 💻 6. Resolvendo conflitos durante um Rebase
 
@@ -203,7 +194,7 @@ git rebase --continue
 
 Se outros conflitos aparecerem, repetimos o processo.
 
-### Cancelando um Rebase
+### ↩️ Cancelando um Rebase
 
 Se quisermos desistir da operação:
 
@@ -214,8 +205,6 @@ git rebase --abort
 Esse comando tenta retornar ao estado anterior ao início do rebase.
 
 **Atenção:** durante um rebase, não utilizamos `git commit` para finalizar cada conflito. O comando apropriado é `git rebase --continue`.
-
----
 
 ## 🎀 7. Resolvendo conflitos durante um Cherry-pick
 
@@ -243,15 +232,13 @@ git add README.md
 git cherry-pick --continue
 ```
 
-### Cancelando um Cherry-pick
+### ↩️ Cancelando um Cherry-pick
 
 ```bash
 git cherry-pick --abort
 ```
 
 Esse comando cancela a operação em andamento e tenta restaurar o estado anterior.
-
----
 
 ## 🌷 8. Diferenças entre os comandos de continuação
 
@@ -271,37 +258,44 @@ Para cancelar:
 | Rebase | `git rebase --abort` |
 | Cherry-pick | `git cherry-pick --abort` |
 
----
-
 ## 📝 9. Boas práticas
 
-- Leia as alterações antes de resolver um conflito.
-- Não escolha automaticamente uma versão sem entender o que ela contém.
-- Revise o arquivo depois de remover os marcadores.
-- Utilize `git status` para acompanhar o processo.
-- Faça testes depois de resolver conflitos, principalmente em projetos maiores.
-- Comunique-se com a equipe quando as alterações envolverem arquivos compartilhados.
-- Evite deixar conflitos pendentes por muito tempo.
+- Ler as alterações antes de resolver um conflito.
+- Não escolher automaticamente uma versão sem entender o que ela contém.
+- Revisar o arquivo depois de remover os marcadores.
+- Utilizar `git status` para acompanhar o processo.
+- Fazer testes depois de resolver conflitos, principalmente em projetos maiores.
+- Comunicar-se com a equipe quando as alterações envolverem arquivos compartilhados.
+- Evitar deixar conflitos pendentes por muito tempo.
 
 ---
 
-## 🩷 10. O que preciso lembrar?
+## 🩷 10. Resumo da aula
 
-- Conflitos acontecem quando o Git não consegue combinar alterações automaticamente.
-- Eles podem ocorrer durante merge, rebase e cherry-pick.
-- O desenvolvedor precisa analisar e resolver manualmente as diferenças.
-- Os marcadores de conflito devem ser removidos antes de continuar.
-- `git status` ajuda a identificar arquivos conflitantes.
-- Cada operação possui comandos próprios para continuar ou cancelar.
+Conflitos acontecem quando o Git não consegue combinar alterações automaticamente. Eles podem surgir durante operações de merge, rebase e cherry-pick.
+
+Os principais conceitos são:
+
+- **Conflito:** situação em que o Git não consegue combinar alterações automaticamente.
+- **Marcadores de conflito:** indicam as partes do arquivo que precisam ser analisadas.
+- **Resolução manual:** processo de escolher ou combinar as alterações e remover os marcadores.
+- **Continuação:** permite finalizar a operação depois de resolver os conflitos.
+- **Cancelamento:** permite desistir de uma operação que ainda está em andamento.
+
+### 💻 Comandos importantes
+
+| Operação | Continuar | Cancelar |
+|---|---|---|
+| Merge | `git merge --continue` | `git merge --abort` |
+| Rebase | `git rebase --continue` | `git rebase --abort` |
+| Cherry-pick | `git cherry-pick --continue` | `git cherry-pick --abort` |
+
+Outros comandos úteis:
+
+```bash
+git status
+git add README.md
+```
 
 ---
 
-## 🌸 11. Minhas anotações
-
-- 
-- 
-- 
-
----
-
-<sub>♡ Resolver conflitos também faz parte de programar. O importante é entender as mudanças e escolher a melhor solução! ♡</sub>

@@ -1,6 +1,6 @@
 
 
-# 🎀 Aula 02 — Branches e Merge 🎀
+# Aula 02 — Branches e Merge 🎀
 
 > 🌷 Entendendo como criar ramificações, desenvolver funcionalidades separadamente e integrar alterações em projetos Git.
 

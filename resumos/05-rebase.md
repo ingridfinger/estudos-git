@@ -1,7 +1,6 @@
-# 🎀 Git Rebase
+# Aula 05 — Git Rebase 🎀
 
-> ୨୧ Meu caderno de estudos — Git & GitHub  
-> Aprendendo a reorganizar o histórico de commits e integrar alterações entre branches!
+> 🌷 Aprendendo a reaplicar commits sobre uma nova base e organizar o histórico de desenvolvimento com Git.
 
 ---
 
@@ -15,16 +14,14 @@ Imagine que estamos desenvolvendo uma funcionalidade na branch `feature/login`, 
 
 Podemos utilizar o rebase para reaplicar nossos commits sobre a versão mais recente da `main`.
 
-### Por que utilizar Rebase?
+### 🩷 Por que utilizar Rebase?
 
 - Manter o histórico de commits mais linear.
 - Atualizar uma branch com as alterações de outra.
 - Organizar o histórico antes de integrar uma funcionalidade.
 - Facilitar a leitura e compreensão da sequência de desenvolvimento.
 
----
-
-## 🩷 2. Como funciona o Rebase?
+## 💻 2. Como funciona o Rebase?
 
 Imagine que temos duas branches:
 
@@ -49,11 +46,9 @@ Os commits `C'` e `D'` representam as alterações reaplicadas.
 
 **Importante:** os novos commits possuem identificadores diferentes dos originais, pois o rebase cria novos commits.
 
----
+## 🌸 3. Principais comandos
 
-## 💻 3. Principais comandos
-
-### Iniciar um Rebase
+### 🔄 Iniciar um Rebase
 
 Primeiro, precisamos estar na branch que receberá a atualização:
 
@@ -69,7 +64,7 @@ git rebase main
 
 Isso reaplica os commits da branch atual sobre a `main`.
 
-### Verificar o histórico
+### 🔎 Verificar o histórico
 
 ```bash
 git log --oneline --graph --all
@@ -77,7 +72,7 @@ git log --oneline --graph --all
 
 Permite visualizar a organização do histórico após o rebase.
 
-### Continuar após resolver conflitos
+### ▶️ Continuar após resolver conflitos
 
 ```bash
 git add README.md
@@ -86,7 +81,7 @@ git rebase --continue
 
 Depois de resolver e adicionar os arquivos conflitantes, utilizamos esse comando para continuar a operação.
 
-### Cancelar um Rebase
+### ↩️ Cancelar um Rebase
 
 ```bash
 git rebase --abort
@@ -94,7 +89,7 @@ git rebase --abort
 
 Cancela o rebase em andamento e tenta retornar ao estado anterior à operação.
 
-### Pular um commit
+### ⏭️ Pular um commit
 
 ```bash
 git rebase --skip
@@ -104,13 +99,11 @@ Ignora o commit que está sendo reaplicado e continua o processo.
 
 **Atenção:** esse comando descarta a aplicação daquele commit durante o rebase. Utilize somente quando entender por que ele deve ser ignorado.
 
----
-
 ## ✨ 4. Diferença entre Merge e Rebase
 
 Os dois comandos permitem integrar alterações entre branches, mas trabalham de maneiras diferentes.
 
-### Merge
+### 🌿 Merge
 
 O merge une as alterações das branches e preserva a história original de ambas.
 
@@ -124,7 +117,7 @@ Exemplo:
 A---B---E---F---M  main
 ```
 
-### Rebase
+### 🌷 Rebase
 
 O rebase reaplica os commits de uma branch sobre outra base, criando novos identificadores para os commits reaplicados.
 
@@ -134,7 +127,7 @@ Exemplo:
 A---B---E---F---C'---D'  feature/login
 ```
 
-### Comparação
+### 📊 Comparação
 
 | Característica | Merge | Rebase |
 |---|---|---|
@@ -149,15 +142,13 @@ A---B---E---F---C'---D'  feature/login
 - `merge`: integra as alterações preservando a história das branches.
 - `rebase`: reaplica os commits sobre uma nova base, reorganizando o histórico.
 
----
-
-## 🌸 5. Conflitos durante o Rebase
+## ⚠️ 5. Conflitos durante o Rebase
 
 Assim como no merge, o rebase pode encontrar conflitos quando tenta reaplicar alterações incompatíveis.
 
 Quando isso acontece, o Git interrompe a operação.
 
-### Como resolver?
+### 🛠️ Como resolver?
 
 Primeiro, verificamos o estado do repositório:
 
@@ -181,15 +172,13 @@ git rebase --continue
 
 Se surgirem novos conflitos, repetimos o processo.
 
-### Cancelando em caso de problemas
+### ↩️ Cancelando em caso de problemas
 
 Se decidirmos desistir da operação:
 
 ```bash
 git rebase --abort
 ```
-
----
 
 ## 🎀 6. Rebase Interativo
 
@@ -205,7 +194,7 @@ git rebase -i HEAD~3
 
 Nesse exemplo, o Git apresenta os últimos três commits para edição.
 
-### Principais opções
+### 🩷 Principais opções
 
 | Opção | Função |
 |---|---|
@@ -218,45 +207,43 @@ Nesse exemplo, o Git apresenta os últimos três commits para edição.
 
 **Atenção:** o rebase interativo reescreve o histórico. Tenha cuidado ao utilizá-lo em commits que já foram compartilhados com outras pessoas.
 
----
-
 ## 💻 7. Exemplo prático completo
 
 Imagine que estamos trabalhando em uma funcionalidade na branch `feature/rebase`, mas a `main` recebeu novas alterações.
 
-### Etapa 1 — Criar uma branch de trabalho
+### 1. 🌱 Criar uma branch de trabalho
 
 ```bash
 git switch -c feature/rebase
 ```
 
-### Etapa 2 — Fazer uma alteração e criar um commit
+### 2. ✏️ Fazer uma alteração e criar um commit
 
 ```bash
 git add README.md
 git commit -m "Adiciona documentação de rebase"
 ```
 
-### Etapa 3 — Voltar para a main
+### 3. 🔄 Voltar para a main
 
 ```bash
 git switch main
 ```
 
-### Etapa 4 — Criar uma nova alteração na main
+### 4. 💾 Criar uma nova alteração na main
 
 ```bash
 git add README.md
 git commit -m "Atualiza documentação na main"
 ```
 
-### Etapa 5 — Voltar para a branch de trabalho
+### 5. 🌷 Voltar para a branch de trabalho
 
 ```bash
 git switch feature/rebase
 ```
 
-### Etapa 6 — Executar o Rebase
+### 6. ✨ Executar o Rebase
 
 ```bash
 git rebase main
@@ -269,7 +256,7 @@ git add README.md
 git rebase --continue
 ```
 
-### Etapa 7 — Conferir o histórico
+### 7. 🔎 Conferir o histórico
 
 ```bash
 git log --oneline --graph --all
@@ -277,19 +264,17 @@ git log --oneline --graph --all
 
 Assim, podemos observar como os commits foram reorganizados sobre a nova base.
 
----
+## 🌸 8. Cuidados e boas práticas
 
-## 🩷 8. Cuidados e boas práticas
+- Utilizar rebase para organizar branches locais e atualizar seu trabalho.
+- Evitar fazer rebase em branches compartilhadas que outras pessoas já utilizam.
+- Lembrar que o rebase altera os identificadores dos commits reaplicados.
+- Verificar o histórico depois da operação.
+- Resolver os conflitos com atenção.
+- Utilizar `git rebase --abort` se precisar cancelar uma operação em andamento.
+- Antes de utilizar o rebase interativo, ter certeza de quais commits deseja modificar.
 
-- Utilize rebase para organizar branches locais e atualizar seu trabalho.
-- Evite fazer rebase em branches compartilhadas que outras pessoas já utilizam.
-- Lembre-se de que o rebase altera os identificadores dos commits reaplicados.
-- Verifique o histórico depois da operação.
-- Resolva os conflitos com atenção.
-- Utilize `git rebase --abort` se precisar cancelar uma operação em andamento.
-- Antes de utilizar o rebase interativo, tenha certeza de quais commits deseja modificar.
-
-### Por que evitar Rebase em branches compartilhadas?
+### 🩷 Por que evitar Rebase em branches compartilhadas?
 
 Imagine que várias pessoas já baixaram uma branch e estão trabalhando com seus commits.
 
@@ -301,9 +286,19 @@ Por isso, uma regra importante é:
 
 **Não reescreva o histórico de branches compartilhadas sem combinar isso com a equipe.**
 
----
+## 📝 9. Resumo da aula
 
-## 🌷 9. O que preciso lembrar?
+O **Git Rebase** permite reaplicar os commits de uma branch sobre uma nova base, reorganizando o histórico e deixando sua sequência mais linear.
+
+Os principais conceitos são:
+
+- **Rebase:** reaplica commits sobre outra base.
+- **Histórico linear:** organização em uma sequência mais direta de commits.
+- **Reescrita de histórico:** os commits reaplicados recebem novos identificadores.
+- **Rebase interativo:** permite editar, combinar, reorganizar ou remover commits.
+- **Conflitos:** podem acontecer durante a reaplicação e precisam ser resolvidos antes de continuar.
+
+### 💻 Comandos importantes
 
 | Comando | Função |
 |---|---|
@@ -315,13 +310,3 @@ Por isso, uma regra importante é:
 | `git log --oneline --graph --all` | Visualiza o histórico de commits. |
 
 ---
-
-## 🎀 10. Minhas anotações
-
-- 
-- 
-- 
-
----
-
-<sub>♡ Um histórico organizado facilita entender a evolução de um projeto. Aprender Git também é aprender a cuidar da história do código! ♡</sub>

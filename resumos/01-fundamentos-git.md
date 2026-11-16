@@ -1,206 +1,141 @@
+
+
 # 🎀 Fundamentos do Git
 
-> ୨୧ Meu caderno de estudos — Git & GitHub  
-> Anotações, conceitos e comandos para consultar sempre que precisar!
-
----
+୨୧ Meu caderno de estudos — Git & GitHub
 
 ## 🌷 1. O que é Git?
 
-O **Git** é um sistema de controle de versão distribuído. Ele permite acompanhar as alterações realizadas em arquivos ao longo do tempo, registrar diferentes versões de um projeto e recuperar estados anteriores quando necessário.
+O **Git** é um sistema de controle de versão distribuído, utilizado para acompanhar as alterações feitas em arquivos e projetos ao longo do tempo.
 
-Com ele, podemos trabalhar com segurança, organizar o desenvolvimento e colaborar com outras pessoas.
+Com ele, é possível registrar versões do projeto, recuperar estados anteriores, trabalhar com diferentes branches e colaborar com outras pessoas.
 
-### Git x GitHub
+Uma diferença importante:
 
-Apesar de trabalharem juntos, eles não são a mesma coisa:
-
-- **Git:** ferramenta que controla as versões do projeto.
-- **GitHub:** plataforma online que hospeda repositórios Git e facilita a colaboração entre desenvolvedores.
-
----
+- **Git:** ferramenta responsável pelo controle de versão.
+- **GitHub:** plataforma online que hospeda repositórios Git e oferece recursos para colaboração.
 
 ## 🩷 2. Conceitos importantes
 
-| Conceito | Significado |
+| Conceito | O que significa |
 |---|---|
-| Repositório | Local onde o Git acompanha os arquivos e o histórico do projeto. |
+| Repositório | Local onde ficam armazenados os arquivos e o histórico do projeto. |
 | Commit | Registro de um conjunto de alterações. |
-| Branch | Linha independente de desenvolvimento. |
-| Working Directory | Diretório onde trabalhamos nos arquivos. |
-| Staging Area | Área onde selecionamos alterações que entrarão no próximo commit. |
-| HEAD | Referência que indica a posição atual no histórico do Git. |
+| Branch | Linha independente de desenvolvimento dentro do projeto. |
+| Working Directory | Diretório onde os arquivos são editados. |
+| Staging Area | Área onde são selecionadas as alterações que entrarão no próximo commit. |
+| HEAD | Referência que indica o commit ou branch atualmente selecionado. |
 
-### Como funciona o fluxo básico?
+O fluxo básico do Git funciona assim:
 
-O Git possui três áreas principais:
+**Working Directory → Staging Area → Repository**
 
-1. **Working Directory:** onde fazemos as alterações.
-2. **Staging Area:** onde selecionamos o que será registrado.
-3. **Repository:** onde os commits ficam armazenados.
-
-Fluxo:
-
-`Working Directory → Staging Area → Repository`
-
----
+Primeiro, as alterações são feitas nos arquivos. Depois, elas são selecionadas para a Staging Area e, por fim, registradas em um commit no repositório.
 
 ## 💻 3. Principais comandos
 
-### Configuração inicial
+### ⚙️ Configuração inicial
 
-Configura a identidade utilizada nos commits:
+| Comando | Função |
+|---|---|
+| `git config --global user.name "Nome"` | Define o nome do usuário. |
+| `git config --global user.email "email"` | Define o e-mail do usuário. |
+| `git config --list` | Exibe as configurações do Git. |
 
-```bash
-git config --global user.name "Seu Nome"
-git config --global user.email "seu@email.com"
-```
+### 📁 Criar ou obter um repositório
 
-Consultar as configurações:
+| Comando | Função |
+|---|---|
+| `git init` | Inicializa um repositório Git na pasta atual. |
+| `git clone URL` | Clona um repositório remoto para o computador. |
 
-```bash
-git config --list
-```
+### 🔎 Verificar alterações
 
-### Criando ou obtendo um repositório
+| Comando | Função |
+|---|---|
+| `git status` | Mostra o estado atual do repositório. |
+| `git diff` | Exibe as diferenças entre as alterações e a versão registrada. |
+| `git log` | Exibe o histórico de commits. |
 
-Inicializar um repositório:
+### 📌 Preparar alterações
 
-```bash
-git init
-```
+| Comando | Função |
+|---|---|
+| `git add arquivo` | Adiciona um arquivo específico à Staging Area. |
+| `git add .` | Adiciona as alterações da pasta atual à Staging Area. |
+| `git restore --staged arquivo` | Remove um arquivo da Staging Area sem apagar suas alterações. |
 
-Clonar um repositório existente:
+### 💾 Registrar alterações
 
-```bash
-git clone URL_DO_REPOSITORIO
-```
+| Comando | Função |
+|---|---|
+| `git commit -m "mensagem"` | Registra as alterações preparadas em um novo commit. |
+| `git show` | Exibe informações sobre um commit. |
 
-### Verificando alterações
+### ↩️ Desfazer alterações
 
-Verificar o estado dos arquivos:
+| Comando | Função |
+|---|---|
+| `git restore arquivo` | Descarta alterações ainda não preparadas, recuperando a versão registrada. |
+
+**Atenção:** o comando `git restore` pode descartar alterações feitas nos arquivos. É importante verificar o estado do projeto antes de utilizá-lo.
+
+## ✨ 4. Exemplo de fluxo na prática
+
+Imagine que você criou um arquivo `README.md` e deseja registrar essa alteração no Git.
+
+**1. Verificar o estado do repositório:**
 
 ```bash
 git status
 ```
 
-Visualizar as alterações ainda não adicionadas:
+**2. Adicionar o arquivo à Staging Area:**
 
 ```bash
-git diff
+git add README.md
 ```
 
-Visualizar o histórico de commits:
+**3. Registrar a alteração:**
+
+```bash
+git commit -m "Adiciona README"
+```
+
+**4. Conferir o histórico:**
 
 ```bash
 git log
 ```
 
-Versão resumida do histórico:
-
-```bash
-git log --oneline
-```
-
-### Preparando alterações
-
-Adicionar um arquivo específico à Staging Area:
-
-```bash
-git add README.md
-```
-
-Adicionar todas as alterações:
-
-```bash
-git add .
-```
-
-Retirar um arquivo da Staging Area, mantendo suas alterações:
-
-```bash
-git restore --staged README.md
-```
-
-### Registrando alterações
-
-Criar um commit:
-
-```bash
-git commit -m "Mensagem explicando a alteração"
-```
-
-Consultar o último commit:
-
-```bash
-git show
-```
-
-### Desfazendo alterações
-
-Descartar alterações não adicionadas à Staging Area:
-
-```bash
-git restore README.md
-```
-
-**Atenção:** esse comando descarta as alterações locais do arquivo. Utilize com cuidado!
-
----
-
-## ✨ 4. Exemplo de fluxo na prática
-
-Imagine que estamos desenvolvendo um projeto e modificamos o arquivo `README.md`.
-
-Podemos seguir esta sequência:
-
-```bash
-# Verificar o estado do projeto
-git status
-
-# Adicionar o arquivo à Staging Area
-git add README.md
-
-# Registrar as alterações
-git commit -m "Atualiza documentação"
-
-# Conferir o histórico
-git log --oneline
-```
-
-Pronto! As alterações foram registradas em um novo commit.
-
----
+Esse é um fluxo básico de trabalho: verificar, adicionar, registrar e conferir as alterações.
 
 ## 🌸 5. Boas práticas
 
-- Utilize mensagens de commit claras e objetivas.
-- Faça commits pequenos e relacionados a uma alteração específica.
-- Verifique o `git status` antes de executar operações importantes.
-- Não inclua arquivos desnecessários no repositório.
-- Utilize um arquivo `.gitignore` para ignorar arquivos que não devem ser versionados.
-- Evite utilizar comandos destrutivos sem entender seus efeitos.
+- Escrever mensagens de commit claras e objetivas.
+- Fazer commits pequenos, agrupando alterações relacionadas.
+- Verificar o estado do repositório antes de executar comandos.
+- Evitar registrar arquivos desnecessários.
+- Manter o histórico organizado para facilitar a identificação de alterações.
 
----
+## 📝 6. Resumo da aula
 
-## 🎀 6. O que preciso lembrar?
+O Git permite controlar as versões de um projeto e acompanhar seu histórico de alterações.
 
-- Git controla versões de arquivos e projetos.
-- GitHub hospeda repositórios Git online.
-- `git add` prepara alterações.
-- `git commit` registra alterações no histórico.
-- `git status` mostra a situação atual do repositório.
-- `git log` permite consultar o histórico de commits.
-- A Staging Area permite escolher o que será incluído em um commit.
+Os conceitos fundamentais são:
 
----
+- **Working Directory:** local onde os arquivos são modificados.
+- **Staging Area:** área onde as alterações são preparadas.
+- **Repository:** local onde os commits são armazenados.
+- **Commit:** registro das alterações realizadas.
+- **Branch:** linha independente de desenvolvimento.
 
-## 📝 7. Minhas anotações
+O fluxo básico de trabalho é:
 
-- 
-- 
-- 
+```bash
+git status
+git add .
+git commit -m "Descrição das alterações"
+git log
+```
 
----
-
-<sub>♡ Estudando um pouquinho todos os dias e construindo meu caminho na Engenharia de Computação. ♡</sub>

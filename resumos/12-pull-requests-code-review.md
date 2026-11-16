@@ -1,4 +1,8 @@
-# 🎀 Aula 12 — Pull Requests e Code Review aprofundado
+# Aula 12 — Pull Requests e Code Review aprofundado 🎀
+
+> 🌷 Aprofundando o processo de revisão de código e integração de alterações com Git e GitHub.
+
+---
 
 ## 🌷 1. O que é Pull Request (PR)?
 
@@ -6,18 +10,22 @@ Um **Pull Request** é uma solicitação para integrar as alterações de uma br
 
 Ele permite que outras pessoas analisem o código antes da integração.
 
-**Principais objetivos:**
+### 💗 Principais objetivos
+
 - Revisar alterações antes do merge.
 - Identificar erros e possíveis melhorias.
 - Discutir soluções com a equipe.
 - Manter o histórico de desenvolvimento organizado.
 - Garantir maior qualidade ao código.
 
+---
+
 ## 💗 2. O que é Code Review?
 
 **Code Review** é o processo de revisão do código realizado antes de sua integração.
 
 Durante a revisão, o responsável analisa:
+
 - Se o código funciona corretamente.
 - Se está organizado e legível.
 - Se segue boas práticas.
@@ -25,6 +33,8 @@ Durante a revisão, o responsável analisa:
 - Se as alterações atendem ao objetivo do PR.
 
 O Code Review ajuda a prevenir problemas e compartilhar conhecimento entre desenvolvedores.
+
+---
 
 ## 🎀 3. Tipos de revisão no GitHub
 
@@ -36,20 +46,24 @@ Ao finalizar uma revisão, o GitHub disponibiliza três opções principais:
 | **Approve** | Aprova as alterações revisadas. |
 | **Request changes** | Solicita alterações antes da integração. |
 
-**Importante:** o autor de um Pull Request não pode aprovar o próprio PR nem solicitar alterações nele mesmo.
+💡 **Importante:** o autor de um Pull Request não pode aprovar o próprio PR nem solicitar alterações nele mesmo.
+
+---
 
 ## 🌸 4. Comentários e sugestões
 
 Durante o Code Review, é possível adicionar comentários diretamente em linhas específicas do código.
 
-### Tipos de interação
+### 🩷 Tipos de interação
 
 - **Review Comment:** comentário sobre uma alteração específica.
 - **Suggestion:** sugestão de alteração diretamente no código.
 - **Conversation:** espaço para discutir e responder aos comentários.
 - **Resolve conversation:** marca uma discussão como resolvida quando o assunto foi tratado.
 
-Uma conversa resolvida não significa que o Pull Request foi aprovado ou integrado.
+💡 Uma conversa resolvida não significa que o Pull Request foi aprovado ou integrado.
+
+---
 
 ## 🐰 5. Como funciona o ciclo de revisão?
 
@@ -67,7 +81,9 @@ Um fluxo comum de Code Review funciona assim:
 10. Reviewer verifica as alterações novamente.
 11. O PR é aprovado e integrado por meio do merge.
 
-**Atenção:** não é necessário criar outro Pull Request quando novas alterações são enviadas para a mesma branch. O PR existente é atualizado automaticamente.
+💡 **Atenção:** não é necessário criar outro Pull Request quando novas alterações são enviadas para a mesma branch. O PR existente é atualizado automaticamente.
+
+---
 
 ## 💻 6. Merge Pull Request
 
@@ -80,7 +96,7 @@ Antes de realizar o merge, é importante verificar:
 - Se existem conflitos com a branch de destino.
 - Se as regras de proteção da branch foram atendidas.
 
-### Tipos de merge
+### 🌷 Tipos de merge
 
 | Tipo | Funcionamento |
 |---|---|
@@ -88,16 +104,19 @@ Antes de realizar o merge, é importante verificar:
 | **Squash and merge** | Reúne os commits do PR em um único commit. |
 | **Rebase and merge** | Reaplica os commits sobre a branch de destino, sem criar um merge commit tradicional. |
 
-## 🌷 7. Excluir branches após o merge
+---
+
+## 🌱 7. Excluir branches após o merge
 
 Depois que um Pull Request é integrado, a branch de funcionalidade geralmente pode ser excluída.
 
 Existem duas operações diferentes:
 
-**No GitHub — branch remota:**
+### ☁️ No GitHub — branch remota
+
 - Utilizar o botão `Delete branch` na página do PR.
 
-**No computador — branch local:**
+### 💻 No computador — branch local
 
 ```powershell
 git switch main
@@ -106,6 +125,8 @@ git branch -d nome-da-branch
 ```
 
 O parâmetro `-d` realiza uma exclusão segura: o Git verifica se a branch já foi integrada antes de removê-la.
+
+---
 
 ## 🧠 8. Comandos utilizados
 
@@ -118,28 +139,13 @@ O parâmetro `-d` realiza uma exclusão segura: o Git verifica se a branch já f
 | `git branch` | Lista as branches locais. |
 | `git branch -d nome` | Exclui uma branch local já integrada. |
 
+---
+
 ## 🧪 9. Nossa prática — Code Review na prática
 
 Criamos uma simulação de revisão utilizando o repositório `estudos-git`.
 
-### Etapas realizadas
-
-- [x] Criamos a branch `feature/code-review`.
-- [x] Criamos o arquivo `calculadora.py`.
-- [x] Implementamos funções de soma, subtração e multiplicação.
-- [x] Criamos um Pull Request para a `main`.
-- [x] Analisamos as alterações em `Files changed`.
-- [x] Publicamos um comentário de revisão sugerindo uma demonstração de uso das funções.
-- [x] Simulamos o atendimento ao feedback adicionando exemplos com `print()`.
-- [x] Criamos o commit `44e3491`.
-- [x] Enviamos as alterações com `git push`.
-- [x] Conferimos a atualização no mesmo Pull Request.
-- [x] Resolvemos a conversa de revisão.
-- [x] Realizamos o merge do Pull Request.
-- [x] Excluímos a branch remota e a local.
-- [x] Atualizamos a `main` local.
-
-### Resultado final
+### ✨ Resultado final
 
 O arquivo `calculadora.py` foi integrado à branch `main`.
 
@@ -156,7 +162,7 @@ Isso confirma que o repositório estava sincronizado com o GitHub e sem alteraç
 
 ---
 
-## ✨ 10. O que preciso guardar desta aula?
+## 💗 10. Resumo da aula
 
 1. Pull Request é uma solicitação de integração de alterações, não a integração em si.
 2. Code Review é a análise do código antes de sua integração.
@@ -166,6 +172,6 @@ Isso confirma que o repositório estava sincronizado com o GitHub e sem alteraç
 6. Merge é o processo que integra as alterações à branch de destino.
 7. Após o merge, branches de funcionalidade podem ser excluídas com segurança.
 
-**Conclusão:** Pull Requests e Code Review são fundamentais para o trabalho colaborativo, pois ajudam a manter o código organizado, revisado e com maior qualidade. 💗
+**Conclusão:** Pull Requests e Code Review são fundamentais para o trabalho colaborativo, pois ajudam a manter o código organizado, revisado e com maior qualidade.
 
-🌷 *Aprendendo um commit de cada vez!*
+---

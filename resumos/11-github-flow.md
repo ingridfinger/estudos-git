@@ -1,7 +1,8 @@
-# 🎀 Aula 11 — GitHub Flow
+# Aula 11 — GitHub Flow 🎀
 
-> 🌷 **Tema:** Fluxo de trabalho colaborativo com Git e GitHub  
-> 💻 **Objetivo:** Aprender a desenvolver funcionalidades em branches separadas, utilizar Pull Requests e revisar alterações antes de integrá-las à branch principal.
+> 🌷 Fluxo de trabalho colaborativo com Git e GitHub.
+
+**Objetivo:** Aprender a desenvolver funcionalidades em branches separadas, utilizar Pull Requests e revisar alterações antes de integrá-las à branch principal.
 
 ---
 
@@ -11,7 +12,7 @@ O **GitHub Flow** é um fluxo de trabalho utilizado para organizar o desenvolvim
 
 Ele permite que cada funcionalidade ou correção seja desenvolvida em uma branch separada, sem modificar diretamente a branch principal (`main`).
 
-✨ **Por que utilizar?**
+### 🩷 Por que utilizar?
 
 - Evita alterações diretas na versão principal.
 - Permite desenvolver e testar funcionalidades isoladamente.
@@ -21,7 +22,7 @@ Ele permite que cada funcionalidade ou correção seja desenvolvida em uma branc
 
 ---
 
-## 🩷 2. Etapas do GitHub Flow
+## 🌷 2. Etapas do GitHub Flow
 
 O fluxo básico funciona da seguinte maneira:
 
@@ -44,7 +45,7 @@ Uma **branch** é uma ramificação do projeto que permite trabalhar em alteraç
 
 Isso evita que modificações em desenvolvimento afetem diretamente a versão estável do projeto.
 
-**Criar uma branch e mudar para ela:**
+### ✨ Criar uma branch e mudar para ela
 
 ```bash
 git switch -c feature/nova-funcionalidade
@@ -52,7 +53,7 @@ git switch -c feature/nova-funcionalidade
 
 💡 O parâmetro `-c` cria a branch e já muda para ela.
 
-**Listar as branches:**
+### 📋 Listar as branches
 
 ```bash
 git branch
@@ -68,7 +69,7 @@ Um **Pull Request** é uma solicitação para integrar as alterações de uma br
 
 Geralmente, é utilizado para que outras pessoas possam analisar o código antes de sua integração.
 
-### ✨ Principais campos:
+### ✨ Principais campos
 
 - **Base:** branch que receberá as alterações (ex.: `main`).
 - **Compare:** branch que contém as alterações (ex.: `feature/nova-funcionalidade`).
@@ -85,7 +86,7 @@ O **Code Review** é o processo de revisão do código antes de sua integração
 
 No GitHub, a aba `Files changed` permite visualizar as modificações realizadas.
 
-**Como identificar as alterações:**
+### 🎨 Como identificar as alterações?
 
 - 🟢 Linhas verdes (`+`): conteúdo adicionado.
 - 🔴 Linhas vermelhas (`-`): conteúdo removido.
@@ -137,7 +138,7 @@ O GitHub também verifica se existem conflitos entre as branches antes de permit
 
 Foi realizada uma simulação completa do GitHub Flow no repositório `estudos-git`.
 
-**Etapas executadas:**
+### 🌷 Etapas executadas
 
 - [x] Criação da branch `feature/github-flow`.
 - [x] Criação e edição do arquivo `github-flow.md`.
@@ -151,16 +152,13 @@ Foi realizada uma simulação completa do GitHub Flow no repositório `estudos-g
 - [x] Exclusão da branch remota após a integração.
 - [x] Atualização da branch `main` local.
 
-<details>
-<summary>🌷 Resultado da prática</summary>
+### ✨ Resultado da prática
 
 Alterações integradas com sucesso e repositório local sincronizado com o GitHub!
 
-</details>
-
 ---
 
-## 💗 10. Resumo final
+## 💗 10. Resumo da aula
 
 O **GitHub Flow** organiza o desenvolvimento de projetos por meio de branches, Pull Requests, Code Review e Merge.
 
@@ -169,11 +167,3 @@ Esse fluxo permite desenvolver funcionalidades de forma isolada, revisar as alte
 É uma prática muito importante para o desenvolvimento colaborativo e para o trabalho em equipes de programação.
 
 ---
-
-<p align="center">
-  🌷 ──── ⋆｡°✩｡°⋆ ──── 🌷
-  <br>
-  <strong>Mais uma etapa concluída!</strong>
-  <br>
-  Estudando um pouquinho todos os dias. 🎀
-</p>

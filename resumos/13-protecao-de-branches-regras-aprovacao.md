@@ -1,10 +1,15 @@
-# 🎀 Aula 13 — Proteção de Branches e Regras de Aprovação
+# Aula 13 — Proteção de Branches e Regras de Aprovação 🎀
+
+> 🌷 Aprendendo a proteger branches importantes e controlar como as alterações são integradas ao projeto.
+
+---
 
 ## 🌷 1. O que são proteções de branches?
 
 As proteções de branches são regras que ajudam a evitar alterações indevidas em branches importantes, como `main`.
 
 Elas permitem controlar:
+
 - Como as alterações podem chegar à branch principal.
 - Quem pode aprovar Pull Requests.
 - Quais verificações precisam passar antes do merge.
@@ -26,7 +31,7 @@ Criamos um ruleset chamado:
 
 `Protecao da branch main`
 
-Configurações utilizadas:
+### 🎀 Configurações utilizadas
 
 | Configuração | Estado |
 |---|---|
@@ -37,7 +42,7 @@ Configurações utilizadas:
 | Restrict deletions | Ativado |
 | Require linear history | Ativado |
 
-### O que cada regra faz?
+### 🌸 O que cada regra faz?
 
 **Require a pull request before merging**
 
@@ -55,7 +60,7 @@ Impede que a branch protegida seja excluída.
 
 ---
 
-## 🌸 3. Pull Requests e aprovações
+## 🌷 3. Pull Requests e aprovações
 
 Também configuramos regras específicas para Pull Requests:
 
@@ -67,7 +72,7 @@ Também configuramos regras específicas para Pull Requests:
 | Require conversation resolution | Ativado |
 | Require review from Code Owners | Desativado |
 
-### Entendendo as regras
+### 💗 Entendendo as regras
 
 **Required approvals**
 
@@ -85,7 +90,7 @@ Exige que a última alteração revisável seja aprovada por alguém diferente d
 
 Exige que as conversas e os comentários de revisão sejam resolvidos antes do merge.
 
-### Uma observação importante
+### ⚠️ Uma observação importante
 
 O autor do Pull Request não pode aprovar o próprio PR. Em um projeto individual, sem outro colaborador com permissão adequada, a regra de aprovação pode impedir o merge.
 
@@ -144,7 +149,7 @@ Quando `Require linear history` está ativado, o método **Merge Commit** não �
 
 Os métodos Squash e Rebase continuam compatíveis.
 
-**Importante:** histórico linear não impede a criação de Pull Requests. Ele controla a forma como as alterações são incorporadas à branch.
+💡 **Importante:** histórico linear não impede a criação de Pull Requests. Ele controla a forma como as alterações são incorporadas à branch.
 
 ---
 
@@ -152,17 +157,18 @@ Os métodos Squash e Rebase continuam compatíveis.
 
 Conhecemos outras regras disponíveis nos Rulesets e entendemos para que servem.
 
-### Require signed commits
+### ✍️ Require signed commits
 
 Exige commits com assinaturas criptográficas verificadas.
 
 Essas assinaturas ajudam a confirmar a autenticidade e a origem dos commits.
 
 Exemplos de mecanismos de assinatura:
+
 - GPG;
 - SSH.
 
-### Require status checks to pass
+### 🧪 Require status checks to pass
 
 Exige que verificações automatizadas sejam aprovadas antes do merge.
 
@@ -174,35 +180,36 @@ Se um teste obrigatório falhar, o GitHub pode bloquear o merge.
 
 A opção `Require branches to be up to date before merging` exige que a branch esteja atualizada com a branch de destino antes de permitir o merge, quando há verificações obrigatórias configuradas.
 
-### Require deployments to succeed
+### 🚀 Require deployments to succeed
 
 Permite exigir que determinados ambientes de implantação tenham um deployment bem-sucedido antes do merge.
 
 Depende de ambientes e processos de deployment configurados.
 
-### Require code scanning results
+### 🛡️ Require code scanning results
 
 Permite exigir resultados de análise de segurança do código.
 
 Um exemplo é o CodeQL, ferramenta do GitHub que identifica possíveis vulnerabilidades.
 
-### Require code quality results
+### 📊 Require code quality results
 
 Permite exigir resultados de análise da qualidade do código, com critérios de severidade.
 
-### Restrict code coverage
+### 📈 Restrict code coverage
 
 Permite estabelecer requisitos de cobertura de testes.
 
 Podemos definir:
+
 - Cobertura mínima de linhas;
 - Queda máxima permitida na cobertura em relação à branch principal.
 
-### Automatically request Copilot code review
+### 🤖 Automatically request Copilot code review
 
 Permite solicitar automaticamente revisões do GitHub Copilot em Pull Requests, conforme as opções configuradas e a disponibilidade do recurso.
 
-**Observação:** estudamos essas regras, mas não ativamos todas. Algumas dependem de ferramentas, verificações ou ambientes previamente configurados.
+💡 **Observação:** estudamos essas regras, mas não ativamos todas. Algumas dependem de ferramentas, verificações ou ambientes previamente configurados.
 
 ---
 
@@ -290,27 +297,14 @@ Assim, terminamos a aula sem deixar branches de teste ou alterações pendentes.
 
 ---
 
-## 🌷 10. O que pratiquei nesta aula?
+## 💗 10. Resumo da aula
 
-- [x] Criei um Branch Ruleset no GitHub.
-- [x] Configurei proteções para a branch `main`.
-- [x] Testei o bloqueio de push direto.
-- [x] Configurei regras de aprovação de Pull Requests.
-- [x] Entendi como funciona a exigência de aprovação.
-- [x] Estudei histórico linear e métodos de merge.
-- [x] Conheci regras avançadas de segurança e qualidade.
-- [x] Criei uma branch e um Pull Request para testar as proteções.
-- [x] Fechei o PR de teste e limpei as branches.
-- [x] Finalizei a prática com o repositório limpo.
+- Branch Rulesets permitem reunir regras de proteção em uma configuração.
+- É possível exigir Pull Requests para integrar alterações à `main`.
+- As regras de aprovação controlam quem precisa revisar as alterações.
+- Novos commits podem invalidar aprovações anteriores.
+- O histórico linear controla os métodos de merge permitidos.
+- Status checks permitem exigir verificações automatizadas antes do merge.
+- Outras regras podem adicionar requisitos de segurança, qualidade e implantação.
 
-**Resultado do quiz:** 4 de 5 questões corretas — 80%.
-
-### 💖 Conclusão
-
-Nesta aula, aprendi a proteger branches importantes e a controlar como as alterações chegam à branch principal de um projeto.
-
-Também compreendi como as regras de aprovação, verificações automatizadas e histórico linear contribuem para a segurança e a qualidade do desenvolvimento colaborativo.
-
-Mais do que conhecer as configurações, consegui testar seu funcionamento diretamente no meu repositório do GitHub.
-
-**Aula 13 concluída! 🎀**
+---

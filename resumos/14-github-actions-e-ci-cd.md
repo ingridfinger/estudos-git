@@ -1,6 +1,8 @@
-# 🎀 Aula 14 — GitHub Actions e CI/CD
+# Aula 14 — GitHub Actions e CI/CD 🎀
 
-> Automatizando tarefas, executando testes e garantindo mais qualidade ao código! 💗
+> 🌷 Automatizando tarefas, executando testes e garantindo mais qualidade ao código!
+
+---
 
 ## 🌷 1. O que é CI/CD?
 
@@ -11,17 +13,20 @@
 - **Continuous Delivery:** mantém o código pronto para ser publicado, dependendo de uma aprovação para a implantação.
 - **Continuous Deployment:** publica automaticamente as alterações aprovadas, sem precisar de uma etapa manual de implantação.
 
+---
+
 ## 💻 2. O que é GitHub Actions?
 
 O **GitHub Actions** é uma ferramenta de automação integrada ao GitHub. Com ela, podemos executar tarefas automaticamente quando determinados eventos acontecem no repositório.
 
 Alguns exemplos:
+
 - Executar testes quando um código é enviado.
 - Verificar alterações em uma Pull Request.
 - Automatizar processos de integração e entrega.
 - Executar scripts e outras tarefas.
 
-### Estrutura de um workflow
+### 🎀 Estrutura de um workflow
 
 Os workflows são arquivos escritos em YAML e ficam dentro da pasta:
 
@@ -42,6 +47,8 @@ Principais elementos:
 | `steps` | Etapas executadas pelo job |
 | `uses` | Utiliza uma Action existente |
 | `run` | Executa um comando no terminal |
+
+---
 
 ## ⚙️ 3. Eventos e execução automática
 
@@ -64,13 +71,15 @@ on:
 
 Nesse exemplo, o workflow será executado em eventos de `push` e em Pull Requests direcionadas à branch `main`.
 
+---
+
 ## 🧪 4. Testes automatizados com Python e pytest
 
 O **pytest** é uma ferramenta utilizada para executar testes automatizados em Python.
 
 Criamos um pequeno projeto de calculadora para aprender como os testes funcionam na prática.
 
-### Estrutura do projeto
+### 🌸 Estrutura do projeto
 
 ```text
 estudos-git/
@@ -82,7 +91,7 @@ estudos-git/
     └── test_calculadora.py
 ```
 
-### Arquivo `calculadora.py`
+### 💗 Arquivo `calculadora.py`
 
 Criamos quatro funções:
 
@@ -106,7 +115,7 @@ def dividir(a, b):
     return a / b
 ```
 
-### Arquivo `test_calculadora.py`
+### 💗 Arquivo `test_calculadora.py`
 
 Criamos cinco testes para verificar o funcionamento das funções:
 
@@ -137,27 +146,27 @@ def test_dividir_por_zero():
         dividir(10, 0)
 ```
 
-### Comandos importantes
+### 💻 Comandos importantes
 
-Instalar o pytest:
+**Instalar o pytest:**
 
 ```powershell
 py -m pip install pytest
 ```
 
-Verificar a versão instalada:
+**Verificar a versão instalada:**
 
 ```powershell
 py -m pytest --version
 ```
 
-Entrar na pasta dos testes:
+**Entrar na pasta dos testes:**
 
 ```powershell
 cd .\testes-python
 ```
 
-Executar os testes:
+**Executar os testes:**
 
 ```powershell
 py -m pytest -v
@@ -173,11 +182,13 @@ O parâmetro `-v` apresenta os resultados individualmente.
 
 Todos os cinco testes foram aprovados! 🎉
 
+---
+
 ## 🤖 5. Executando testes com GitHub Actions
 
 Depois de verificar que os testes funcionavam localmente, configuramos o GitHub Actions para executá-los automaticamente.
 
-### Workflow utilizado
+### 🌷 Workflow utilizado
 
 Arquivo: `.github/workflows/primeiro-workflow.yml`
 
@@ -211,7 +222,7 @@ jobs:
         run: python -m pytest -v
 ```
 
-### Entendendo as etapas
+### 🩷 Entendendo as etapas
 
 1. `actions/checkout@v4`: disponibiliza o código do repositório no ambiente de execução.
 2. `actions/setup-python@v5`: configura o Python 3.12.
@@ -220,7 +231,7 @@ jobs:
 
 O `working-directory` define a pasta na qual o comando será executado.
 
-### Resultado no GitHub
+### 🌸 Resultado no GitHub
 
 Na Pull Request, os dois checks foram aprovados:
 
@@ -228,6 +239,8 @@ Na Pull Request, os dois checks foram aprovados:
 - `Testes automatizados / testes (pull_request)`
 
 Assim, confirmamos que os testes funcionavam tanto no envio de código quanto na abertura da Pull Request. 💗
+
+---
 
 ## 🔒 6. Integração com proteção de branches
 
@@ -237,7 +250,7 @@ Para isso, utilizamos as regras de proteção da branch `main`, em:
 
 **Settings → Rules → Rulesets**
 
-### Regras configuradas
+### 🎀 Regras configuradas
 
 | Regra | Finalidade |
 |---|---|
@@ -248,7 +261,7 @@ Para isso, utilizamos as regras de proteção da branch `main`, em:
 | Require status checks to pass | Exige que os checks selecionados sejam aprovados. |
 | Require branches to be up to date before merging | Exige que a branch da Pull Request esteja atualizada com a branch de destino. |
 
-### Check obrigatório
+### 🧪 Check obrigatório
 
 Adicionamos o seguinte check:
 
@@ -259,6 +272,8 @@ Testes automatizados / testes
 Com isso, o GitHub exige que o job de testes seja aprovado antes de permitir a integração da Pull Request.
 
 **Na prática:** se os testes falharem, o merge ficará bloqueado até que o problema seja corrigido e os testes passem.
+
+---
 
 ## 📝 7. Fluxo prático realizado
 
@@ -277,6 +292,8 @@ Durante a aula, seguimos este fluxo:
 11. Atualizamos a `main` com `git pull origin main`.
 12. Configuramos os testes como uma verificação obrigatória na proteção da branch.
 
+---
+
 ## 💡 8. O que aprendi nesta aula?
 
 Nesta aula, aprendi a utilizar o GitHub Actions para automatizar tarefas e executar testes em projetos.
@@ -287,7 +304,9 @@ Na prática, desenvolvi uma pequena calculadora em Python, criei testes automati
 
 Por fim, aprendi a integrar os checks do GitHub Actions às regras de proteção da branch `main`, impedindo que alterações sejam integradas sem a aprovação dos testes.
 
-## 🌸 9. Anotações importantes
+---
+
+## 🌸 9. Resumo da aula
 
 - CI/CD ajuda a automatizar processos e reduzir erros.
 - Workflows do GitHub Actions são escritos em YAML.
@@ -298,7 +317,3 @@ Por fim, aprendi a integrar os checks do GitHub Actions às regras de proteção
 - Uma branch protegida ajuda a manter a qualidade e a organização do repositório.
 
 ---
-
-<sub>🎀 Estudos de Git e GitHub — Engenharia de Computação | UCDB</sub>
-
-<sub>Feito com dedicação, prática e muitos commits! 💗</sub>

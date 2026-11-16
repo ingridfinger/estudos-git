@@ -1,7 +1,8 @@
-# 🎀 Branches e Merge
 
-> ୨୧ Meu caderno de estudos — Git & GitHub  
-> Aprendendo a criar caminhos independentes de desenvolvimento e unir alterações!
+
+# 🎀 Aula 02 — Branches e Merge 🎀
+
+> 🌷 Entendendo como criar ramificações, desenvolver funcionalidades separadamente e integrar alterações em projetos Git.
 
 ---
 
@@ -20,7 +21,7 @@ Por exemplo, imagine que temos um projeto com a seguinte estrutura:
 
 Cada branch pode ter seus próprios commits e alterações.
 
-### Por que utilizar branches?
+### 🩷 Por que utilizar branches?
 
 - Desenvolver funcionalidades separadamente.
 - Corrigir erros sem interferir diretamente na versão principal.
@@ -28,11 +29,9 @@ Cada branch pode ter seus próprios commits e alterações.
 - Facilitar o trabalho em equipe.
 - Organizar o histórico de desenvolvimento.
 
----
+## 💻 2. Principais comandos de Branch
 
-## 🩷 2. Principais comandos de Branch
-
-### Visualizar branches
+### 🔎 Visualizar branches
 
 Listar as branches locais:
 
@@ -48,7 +47,7 @@ git branch -a
 
 A branch atual aparece com um `*` ao lado do nome.
 
-### Criar uma branch
+### 🌱 Criar uma branch
 
 ```bash
 git branch nome-da-branch
@@ -56,7 +55,7 @@ git branch nome-da-branch
 
 Esse comando cria uma branch, mas não muda para ela.
 
-### Criar e trocar de branch
+### ✨ Criar e trocar de branch
 
 ```bash
 git switch -c nome-da-branch
@@ -64,7 +63,7 @@ git switch -c nome-da-branch
 
 Esse comando cria uma nova branch e já muda para ela.
 
-### Trocar de branch
+### 🔄 Trocar de branch
 
 ```bash
 git switch nome-da-branch
@@ -78,13 +77,13 @@ git checkout nome-da-branch
 
 Atualmente, `git switch` é uma opção mais específica e clara para trocar de branch.
 
-### Renomear uma branch
+### ✏️ Renomear uma branch
 
 ```bash
 git branch -m novo-nome
 ```
 
-### Excluir uma branch
+### 🗑️ Excluir uma branch
 
 Excluir uma branch local já integrada:
 
@@ -100,9 +99,7 @@ git branch -D nome-da-branch
 
 **Atenção:** a opção `-D` pode excluir uma branch mesmo que ela tenha alterações ainda não integradas.
 
----
-
-## 💻 3. O que é Merge?
+## 🌸 3. O que é Merge?
 
 O **merge** é a operação utilizada para unir as alterações de uma branch em outra.
 
@@ -110,7 +107,7 @@ Por exemplo, imagine que desenvolvemos uma funcionalidade na branch `feature/log
 
 O merge permite trazer os commits dessa funcionalidade para a branch principal.
 
-### Como realizar um Merge?
+### 🔗 Como realizar um Merge?
 
 Primeiro, precisamos estar na branch que receberá as alterações:
 
@@ -128,11 +125,9 @@ Pronto! O Git tentará integrar as alterações da branch `feature/login` à `ma
 
 **Importante:** o merge não exclui automaticamente a branch de origem.
 
----
-
 ## ✨ 4. Tipos de Merge
 
-### Fast-forward
+### 🌿 Fast-forward
 
 Acontece quando a branch de destino não recebeu novos commits desde a criação da branch que será integrada.
 
@@ -154,7 +149,7 @@ A---B---C---D---E  main
 
 Não é necessário criar um commit de merge.
 
-### Three-way merge
+### 🌷 Three-way merge
 
 Acontece quando as duas branches possuem commits diferentes desde o ponto em que se separaram.
 
@@ -176,7 +171,7 @@ O Git utiliza três pontos para realizar a integração:
 
 O resultado pode gerar um **merge commit**, registrando a união das duas linhas de desenvolvimento.
 
-### Merge com commit explícito
+### 💾 Merge com commit explícito
 
 Podemos solicitar que o Git crie um commit de merge mesmo quando seria possível fazer fast-forward:
 
@@ -186,9 +181,7 @@ git merge --no-ff feature/login
 
 Isso ajuda a preservar visualmente a integração da funcionalidade no histórico.
 
----
-
-## 🌸 5. Conflitos de Merge
+## ⚠️ 5. Conflitos de Merge
 
 Um conflito acontece quando o Git não consegue combinar automaticamente determinadas alterações.
 
@@ -196,7 +189,7 @@ Um exemplo comum é quando duas branches modificam a mesma parte de um arquivo d
 
 Quando isso acontece, o Git solicita que o desenvolvedor resolva o conflito manualmente.
 
-### Como identificar um conflito?
+### 🔎 Como identificar um conflito?
 
 Após executar:
 
@@ -222,7 +215,7 @@ Esses marcadores indicam as partes conflitantes:
 - `=======`: separação entre as versões.
 - `>>>>>>> feature/login`: final do conteúdo da outra branch.
 
-### Como resolver?
+### 🛠️ Como resolver?
 
 1. Abrir o arquivo com conflito.
 2. Analisar as duas versões.
@@ -239,7 +232,7 @@ git commit
 
 O commit finaliza o merge quando ele ficou pendente por causa dos conflitos.
 
-### Cancelar um Merge
+### ↩️ Cancelar um Merge
 
 Se quisermos desistir da operação antes de concluí-la:
 
@@ -249,19 +242,17 @@ git merge --abort
 
 Esse comando tenta retornar ao estado anterior ao início do merge.
 
----
-
 ## 💻 6. Exemplo prático completo
 
 Imagine que estamos trabalhando em um projeto e precisamos criar uma funcionalidade de login.
 
-### Etapa 1 — Criar a branch
+### 🌱 1. Criar a branch
 
 ```bash
 git switch -c feature/login
 ```
 
-### Etapa 2 — Fazer alterações
+### ✏️ 2. Fazer alterações
 
 Modificar os arquivos necessários e preparar as alterações:
 
@@ -269,25 +260,25 @@ Modificar os arquivos necessários e preparar as alterações:
 git add .
 ```
 
-### Etapa 3 — Criar um commit
+### 💾 3. Criar um commit
 
 ```bash
 git commit -m "Adiciona funcionalidade de login"
 ```
 
-### Etapa 4 — Voltar para a branch principal
+### 🔄 4. Voltar para a branch principal
 
 ```bash
 git switch main
 ```
 
-### Etapa 5 — Integrar as alterações
+### 🔗 5. Integrar as alterações
 
 ```bash
 git merge feature/login
 ```
 
-### Etapa 6 — Conferir o resultado
+### 🔎 6. Conferir o resultado
 
 ```bash
 git log --oneline --graph --all
@@ -295,21 +286,34 @@ git log --oneline --graph --all
 
 Esse comando permite visualizar o histórico de commits e as ramificações do projeto.
 
----
+## 🌸 7. Boas práticas
 
-## 🎀 7. Boas práticas
-
-- Crie branches para funcionalidades e correções específicas.
-- Utilize nomes descritivos, como `feature/login` e `fix/menu`.
-- Evite desenvolver tudo diretamente na `main`.
-- Faça commits pequenos e com mensagens claras.
-- Antes de realizar um merge, confira o estado do repositório.
-- Resolva os conflitos com atenção, sem apagar alterações importantes.
-- Exclua branches que não são mais necessárias depois de confirmar que foram integradas.
+- Criar branches para funcionalidades e correções específicas.
+- Utilizar nomes descritivos, como `feature/login` e `fix/menu`.
+- Evitar desenvolver tudo diretamente na `main`.
+- Fazer commits pequenos e com mensagens claras.
+- Antes de realizar um merge, conferir o estado do repositório.
+- Resolver os conflitos com atenção, sem apagar alterações importantes.
+- Excluir branches que não são mais necessárias depois de confirmar que foram integradas.
 
 ---
 
-## 📝 8. O que preciso lembrar?
+## 📝 8. Resumo da aula
+
+Branches permitem desenvolver funcionalidades, correções e melhorias em linhas independentes, sem modificar diretamente a branch principal.
+
+O merge é utilizado para integrar as alterações de uma branch em outra.
+
+Os principais conceitos são:
+
+- **Branch:** linha independente de desenvolvimento.
+- **Merge:** operação que integra alterações entre branches.
+- **Fast-forward:** avanço da referência da branch de destino, sem criar um commit de merge.
+- **Three-way merge:** integração baseada no ancestral comum e nos estados das duas branches.
+- **Merge commit:** commit que registra a união das linhas de desenvolvimento.
+- **Conflito:** situação em que o Git não consegue combinar alterações automaticamente.
+
+### 💻 Principais comandos
 
 | Comando | Função |
 |---|---|
@@ -324,13 +328,3 @@ Esse comando permite visualizar o histórico de commits e as ramificações do p
 | `git log --oneline --graph --all` | Exibe o histórico visualmente. |
 
 ---
-
-## 🌷 9. Minhas anotações
-
-- 
-- 
-- 
-
----
-
-<sub>♡ Cada branch é um caminho de desenvolvimento, e o merge permite reunir esses caminhos. Um passo de cada vez! ♡</sub>
